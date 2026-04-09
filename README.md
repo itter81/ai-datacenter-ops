@@ -11,7 +11,7 @@ AI 数据中心运维实践 | Telegraf + VictoriaMetrics + Grafana 监控 X 台 
 环境规模：
 
 - GPU 服务器：**X 台** Dell XE9680（每台 8 卡 H200），共 **X 张 H200 GPU**
-- 网络设备：防火墙 × 2、核心交换机 × 2、存储交换机 × N、业务接入交换机 × N、计算网交换机 × N、OOB 带外交换机 × N
+- 网络设备：防火墙 × X、核心交换机 × X、存储交换机 × N、业务接入交换机 × N、计算网交换机 × N、OOB 带外交换机 × N
 - 监控栈：Telegraf → VictoriaMetrics → Grafana
 
 ---
@@ -20,10 +20,22 @@ AI 数据中心运维实践 | Telegraf + VictoriaMetrics + Grafana 监控 X 台 
 
 ```
 ai-datacenter-ops/
-├── README.md                  # 本文件
-└── 01-monitoring/
-    ├── README.md              # 监控方案详细说明
-    └── telegraf.conf          # Telegraf 采集配置（脱敏版）
+├── README.md                              # 项目总览
+├── 01-monitoring/
+│   ├── README.md                         # 监控方案说明
+│   ├── telegraf/
+│   │   └── telegraf.conf                # 采集配置
+│   ├── victoriametrics/                  # VM 配置
+│   │   └── vmconfig.yml
+│   └── grafana/                          # 
+│       ├── dashboards/                   # Dashboard JSON文件
+│       │   ├── network-overview.json
+│       │   ├── gpu-monitoring.json
+│       │   └── idrac-health.json
+│       ├── provisioning/                 #未加载--自动配置（可选）
+│       │   ├── dashboards.yml           #未加载--自动加载 Dashboard
+│       │   └── datasources.yml          #未加载--自动配置数据源
+│       └── README.md                     # Grafana 部署说明
 ```
 
 
