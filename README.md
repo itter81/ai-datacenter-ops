@@ -26,7 +26,6 @@ ai-datacenter-ops/
     └── telegraf.conf          # Telegraf 采集配置（脱敏版）
 ```
 
-> 后续计划添加：`02-pxe-deploy/`（PXE 裸金属自动化交付）、`03-llm-inference/`（vLLM / llama.cpp 部署）
 
 ---
 
