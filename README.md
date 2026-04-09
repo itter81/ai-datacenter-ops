@@ -20,22 +20,28 @@ AI 数据中心运维实践 | Telegraf + VictoriaMetrics + Grafana 监控 X 台 
 
 ```
 ai-datacenter-ops/
-├── README.md                              # 项目总览
-├── 01-monitoring/
-│   ├── README.md                          # 监控方案说明
-│   ├── telegraf/
-│   │   └── telegraf.conf                  # 采集配置
-│   ├── victoriametrics/                   # VM 配置
-│   │   └── vmconfig.yml
-│   └── grafana/                         
-│       ├── dashboards/                    #Dashboard JSON文件
-│       │   ├── network-overview.json
-│       │   ├── gpu-monitoring.json
-│       │   └── idrac-health.json
-│       ├── provisioning/                  #未加载--自动配置（可选）
-│       │   ├── dashboards.yml             #未加载--自动加载 Dashboard
-│       │   └── datasources.yml            #未加载--自动配置数据源
-│       └── README.md                      # Grafana 部署说明
+├── README.md                                    # 项目总览
+└── 01-monitoring/                               # 监控模块
+    ├── README.md                                # 监控模块说明
+    ├── telegraf/
+    │   └── telegraf.conf                        # Telegraf 采集配置（脱敏版）
+    ├── victoriametrics/
+    │   └── vmconfig.yml                         # VictoriaMetrics 服务配置
+    └── grafana/
+        ├── README.md                            # Grafana 部署说明
+        ├── docs/
+        │   └── grafana-network-traffic.png      # Dashboard 截图（已打码）
+        └── dashboards/                          # 面板 JSON，可直接导入 Grafana
+            ├── all-devices-top5-out.json        # 全网设备-Top5-出接口流量
+            ├── firewall-top5-out.json           # 防火墙-Top5-出接口流量
+            ├── core-sw-top5-out.json            # 核心交换机-Top5-出接口流量
+            ├── biz-access-sw-top5-out.json      # 业务接入交换机-Top5-出接口流量
+            ├── storage-sw-top5-out.json         # 存储交换机-Top5-出接口流量
+            ├── compute-sw-top5-out.json         # 计算网交换机-Top5-出接口流量
+            ├── oob-access-sw-top5-out.json      # 带外接入交换机-Top5-出接口流量
+            ├── oob-agg-sw-top5-out.json         # 带外汇聚交换机-Top5-出接口流量
+            ├── network-crc-error-top5.json      # 全网设备-Top5-双向CRC误码率
+            └── gpu-server-top10-temp.json       # GPU服务器-Top10卡-GPU温度
 ```
 
 
