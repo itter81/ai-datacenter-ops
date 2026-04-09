@@ -1,1 +1,28 @@
 
+
+[root@zabbix-andl ~]# ls  -l   /opt/victoria/
+total 23716
+-rwxr-xr-x 1 root root 24284960 Jan 24  2025 victoria-metrics-prod
+[root@zabbix-andl ~]# ls  -l /data/victoria/data
+total 0
+drwxr-xr-x 6 root root 214 Jan 26 12:47 cache
+drwxr-xr-x 4 root root  30 Jan 26 12:46 data
+-rw-r--r-- 1 root root   0 Jan 26 12:47 flock.lock
+drwxr-xr-x 6 root root  95 Mar 10 12:00 indexdb
+drwxr-xr-x 2 root root  43 Jan 26 12:46 metadata
+drwxr-xr-x 2 root root   6 Jan 26 12:46 snapshots
+drwxr-xr-x 3 root root  27 Jan 26 12:47 tmp
+[root@zabbix-andl ~]#  cat /etc/systemd/system/victoria-metrics.service
+[Unit]
+Description=VictoriaMetrics TSDB
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/opt/victoria/victoria-metrics-prod -storageDataPath=/data/victoria/data -httpListenAddr=:8428
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+[root@zabbix-andl ~]# 
