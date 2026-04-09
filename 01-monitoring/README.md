@@ -130,6 +130,6 @@ snmp_gpu_temp_1{agent_host="$gpu_host"}
 
 ## 截图
 
-![网络流量 Dashboard](./01-monitoring/grafana/docs/grafana-network-traffic.png)
+![Grafana 网络流量 Dashboard](./01-monitoring/grafana/docs/grafana-network-traffic.png)
 
 <!-- 截图说明：已打码处理，隐藏实际 IP 及设备数量 -->
