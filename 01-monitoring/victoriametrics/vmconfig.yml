@@ -24,3 +24,21 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 [root@zabbix-andl ~]# 
+[root@zabbix-andl ~]# systemctl  status  victoria-metrics.service 
+● victoria-metrics.service - VictoriaMetrics TSDB
+   Loaded: loaded (/etc/systemd/system/victoria-metrics.service; enabled; vendor preset: disabled)
+   Active: active (running) since Mon 2026-01-26 12:47:33 CST; 2 months 12 days ago
+ Main PID: 16531 (victoria-metric)
+    Tasks: 19
+   CGroup: /system.slice/victoria-metrics.service
+           └─16531 /opt/victoria/victoria-metrics-prod -storageDataPath=/data/victoria/data -httpListenAddr=:8428
+
+Apr 01 08:00:00 zabbix-andl victoria-metrics-prod[16531]: 2026-04-01T00:00:00.165Z        info        VictoriaMetrics/lib/storage/partition.go:202        creat.../2026_04"
+Apr 01 08:00:00 zabbix-andl victoria-metrics-prod[16531]: 2026-04-01T00:00:00.170Z        info        VictoriaMetrics/lib/storage/partition.go:211        parti...n created
+Apr 01 08:00:57 zabbix-andl victoria-metrics-prod[16531]: 2026-04-01T00:00:57.451Z        info        VictoriaMetrics/lib/storage/partition.go:231        dropp.../2026_02"
+Apr 01 08:00:57 zabbix-andl victoria-metrics-prod[16531]: 2026-04-01T00:00:57.459Z        info        VictoriaMetrics/lib/storage/partition.go:235        parti...n dropped
+Apr 05 13:51:10 zabbix-andl victoria-metrics-prod[16531]: 2026-04-05T05:51:10.790Z        info        VictoriaMetrics/lib/storage/partition.go:1473        merged (9 par...
+Apr 09 12:02:22 zabbix-andl victoria-metrics-prod[16531]: 2026-04-09T04:02:22.402Z        info        VictoriaMetrics/lib/storage/partition.go:1473        merged (8 par...
+Warning: Journal has been rotated since unit was started. Log output is incomplete or unavailable.
+Hint: Some lines were ellipsized, use -l to show in full.
+[root@zabbix-andl ~]# 
