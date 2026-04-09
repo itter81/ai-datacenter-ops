@@ -58,7 +58,7 @@ Grafana（展示层）
 
 **网络流量总览（按设备角色聚合）**
 
-![Grafana 网络流量 Dashboard](./01-monitoring/docs/grafana-network-traffic.png)
+![Grafana 网络流量 Dashboard](./01-monitoring/grafana/dashboards/docs/grafana-network-traffic.png)
 
 <!-- 后续补充：GPU 温度 Dashboard 截图 -->
 <!-- ![Grafana GPU 温度 Dashboard](./01-monitoring/docs/grafana-gpu-temp.png) -->
