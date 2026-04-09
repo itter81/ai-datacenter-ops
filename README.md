@@ -22,20 +22,20 @@ AI 数据中心运维实践 | Telegraf + VictoriaMetrics + Grafana 监控 X 台 
 ai-datacenter-ops/
 ├── README.md                              # 项目总览
 ├── 01-monitoring/
-│   ├── README.md                         # 监控方案说明
+│   ├── README.md                          # 监控方案说明
 │   ├── telegraf/
-│   │   └── telegraf.conf                # 采集配置
-│   ├── victoriametrics/                  # VM 配置
+│   │   └── telegraf.conf                  # 采集配置
+│   ├── victoriametrics/                   # VM 配置
 │   │   └── vmconfig.yml
-│   └── grafana/                          # 
-│       ├── dashboards/                   # Dashboard JSON文件
+│   └── grafana/                         
+│       ├── dashboards/                    #Dashboard JSON文件
 │       │   ├── network-overview.json
 │       │   ├── gpu-monitoring.json
 │       │   └── idrac-health.json
-│       ├── provisioning/                 #未加载--自动配置（可选）
-│       │   ├── dashboards.yml           #未加载--自动加载 Dashboard
-│       │   └── datasources.yml          #未加载--自动配置数据源
-│       └── README.md                     # Grafana 部署说明
+│       ├── provisioning/                  #未加载--自动配置（可选）
+│       │   ├── dashboards.yml             #未加载--自动加载 Dashboard
+│       │   └── datasources.yml            #未加载--自动配置数据源
+│       └── README.md                      # Grafana 部署说明
 ```
 
 
