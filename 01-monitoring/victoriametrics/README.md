@@ -1,4 +1,3 @@
-
 # VictoriaMetrics
 
 ## 概述
@@ -11,10 +10,16 @@
 
 ```
 /opt/victoria/
-└── victoria-metrics-prod    # 二进制文件
+└── victoria-metrics-prod       # 二进制文件，单文件无依赖
 
 /data/victoria/
-└── data/                    # 数据存储目录（建议挂载独立数据盘）
+└── data/                       # 数据存储目录（建议挂载独立数据盘）
+    ├── cache/
+    ├── data/
+    ├── indexdb/
+    ├── metadata/
+    ├── snapshots/
+    └── tmp/
 ```
 
 ---
@@ -74,10 +79,20 @@ EOF
 systemctl daemon-reload && systemctl enable --now victoria-metrics && systemctl status victoria-metrics
 ```
 
+服务正常运行状态：
+
+```
+● victoria-metrics.service - VictoriaMetrics TSDB
+   Loaded: loaded (/etc/systemd/system/victoria-metrics.service; enabled)
+   Active: active (running) since Mon 2026-01-26 12:47:33 CST; 2 months 12 days ago
+ Main PID: 16531 (victoria-metric)
+```
+
 ---
 
 ## 说明
 
-- 默认端口 `8428`，Telegraf 和 Grafana 均指向此地址
+- 单机版无配置文件，所有参数通过 `ExecStart` 启动参数传入
+- 默认端口 `8428`，Telegraf outputs.http 和 Grafana 数据源均指向此地址
 - Grafana 数据源类型选 `Prometheus`，URL 填 `http://<本机IP>:8428`
 - 数据目录建议挂载独立数据盘，避免占用系统盘
