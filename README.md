@@ -64,7 +64,7 @@ Grafana（展示层）
 
 **选型说明：**
 
-- **Telegraf**：SNMP 插件原生支持，配置简单，多设备角色用 `[inputs.snmp.tags]` 区分，Grafana 里可直接按 `device_role` 过滤
+- **Telegraf**：SNMP 插件原生支持(不侵入系统,例如客户不让安装agent,只能通过带外)，配置简单，多设备角色用 `[inputs.snmp.tags]` 区分，Grafana 里可直接按 `device_role` 过滤
 - **VictoriaMetrics**：单机版极简部署，比 Prometheus 更省内存，适合设备多、点位多的 IDC 场景
 - **Grafana**：统一展示网络流量 + GPU 温度，同一 Dashboard 通过变量切换设备角色
 
