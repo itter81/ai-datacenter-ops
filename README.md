@@ -89,6 +89,16 @@ Grafana（展示层）
 
 ---
 
+## 补充：Zabbix Global View
+
+除 Grafana 外，同步维护 Zabbix 仪表盘，通过 HTTP 代理监控项
+拉取 VictoriaMetrics 数据，实现防火墙 / 核心交换机 / 存储交换机
+Top5 出口流量的实时排行展示。
+
+详见 [02-zabbix/](02-zabbix/)
+
+---
+
 ## License
 
 MIT
